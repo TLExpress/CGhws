@@ -7,7 +7,7 @@
 
 ## Homeworks
 
-- ![GREEN](https://tlexpress.github.io/CGhws/index_files/green.png) [HW0: Three.JS testing](https://tlexpress.github.io/CGhws/hw0/)
+- ![GREEN](https://tlexpress.github.io/CGhws/index_files/green.png) [HW0: Three.JS demonstration](https://tlexpress.github.io/CGhws/hw0/)
 - ![GRAY](https://tlexpress.github.io/CGhws/index_files/gray.png) HW1: Time-based animation
 - ![GRAY](https://tlexpress.github.io/CGhws/index_files/gray.png) HW2: *Untitled*
 
