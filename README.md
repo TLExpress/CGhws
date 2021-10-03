@@ -16,7 +16,6 @@ Status: \
 ![YELLOW](https://tlexpress.github.io/CGhws/index_files/yellow.png): In progress \
 ![GRAY](https://tlexpress.github.io/CGhws/index_files/gray.png): Pending \
 ![RED](https://tlexpress.github.io/CGhws/index_files/red.png): Has trouble
-
 ##
 
 Index page: https://TLExpress.github.io/CGhws/ \
