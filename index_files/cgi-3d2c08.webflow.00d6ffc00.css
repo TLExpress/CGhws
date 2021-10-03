@@ -486,6 +486,9 @@ figcaption {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 60px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -569,8 +572,9 @@ figcaption {
   width: auto;
   height: auto;
   min-height: 480px;
-  margin-right: 0px;
-  margin-left: 0px;
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
