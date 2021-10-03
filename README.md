@@ -7,11 +7,11 @@
 
 ## Homeworks
 
-###### Status: \
-###### ![GREEN](https://tlexpress.github.io/CGhws/index_files/green.png): Completed \
-###### ![YELLOW](https://tlexpress.github.io/CGhws/index_files/yellow.png): In progress \
-###### ![GRAY](https://tlexpress.github.io/CGhws/index_files/gray.png): Pending \
-###### ![RED](https://tlexpress.github.io/CGhws/index_files/red.png): Has trouble
+Status: \
+![GREEN](https://tlexpress.github.io/CGhws/index_files/green.png): Completed \
+![YELLOW](https://tlexpress.github.io/CGhws/index_files/yellow.png): In progress \
+![GRAY](https://tlexpress.github.io/CGhws/index_files/gray.png): Pending \
+![RED](https://tlexpress.github.io/CGhws/index_files/red.png): Has trouble
 
 - ![GREEN](https://tlexpress.github.io/CGhws/index_files/green.png) [HW0: Three.JS testing](https://tlexpress.github.io/CGhws/hw0/)
 - ![GRAY](https://tlexpress.github.io/CGhws/index_files/gray.png) HW1: Time-based animation
