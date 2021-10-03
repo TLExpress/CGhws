@@ -2,7 +2,7 @@
 ### 田國駿
 ##### GI.02 / 611006002
 
-[![INDEX](https://tlexpress.github.io/CGhws/index_files/index_thumb.png)](https://tlexpress.github.io/CGhws/)
+[![INDEX](https://tlexpress.github.io/CGhws/index_files/index_thumb256.png)](https://tlexpress.github.io/CGhws/)
 
 [![EMAIL](https://tlexpress.github.io/CGhws/index_files/email_thumb.png)](mailto:u10606157@ms.ttu.edu.tw)
 
