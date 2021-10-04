@@ -17,10 +17,10 @@ Status: \
 ![GRAY](https://tlexpress.github.io/CGhws/index_files/gray.png) : Pending \
 ![RED](https://tlexpress.github.io/CGhws/index_files/red.png) : Has trouble
 
-## About this course
+## About course
 
 Course period: 9/24/2021 ~ 1/21/2021 \
-Advisor: Jyun-Ming Chen
+Advisor: [Jyun-Ming Chen](https://tchinfo.ttu.edu.tw/tchinfo.php?id=jmchen)[![Gmail](https://tlexpress.github.io/CGhws/index_files/gm.png)](mailto:jyunming.chen@gmail.com/)
 
 ### Syllabus
 
@@ -56,24 +56,24 @@ Advisor: Jyun-Ming Chen
 
 |Week|Date|Lectures|Homeworks|
 |:-:|:-:|-|-|
-|1|9/24|[CGIntro](https://docs.google.com/presentation/d/1QN-C-BpYVnsCjk9cjG9vYHkKl5HC2SI6uFdR8yZ5fNY/edit?usp=sharing/), [JavaScript Intro](https://docs.google.com/presentation/d/1NOZ2h35-BUejaQk_UWzpN9eI_uxVFD7GvvJnVy4Qjlw/edit?usp=sharing/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/L6vZqB-O8TI/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/GbeGxo5mdS8/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/wiKf8n56huw/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/j_xwm15yiV4)||
-|2|10/1|[Vector3](https://docs.google.com/presentation/d/1MoedfrtR4hfE-vi4qmYHWLzWQaXu5WrgefV2mSVHjuk/edit?usp=sharing/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/oJmTykDux1U/),[ 3JS template](https://docs.google.com/presentation/d/1rpb7x0fBZLvmcjXXZvcdGhYxxa-I_RbljV9ofVS6gjQ/edit?usp=sharing/), [101](https://docs.google.com/presentation/d/1j0dj22vDOvJuUJ95xjHrCPERq3sLBpAEZ_5CcFpjlG0/edit?usp=sharing/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/Nu8jUuvZFac/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/hukbG8vpOlU/)|[hw0](https://docs.google.com/document/d/1ZNepPvZ9L8D3-74OixUkWyqrwVkAgYrV4oy89GV94fU/edit?usp=sharing/) [作業製作](https://docs.google.com/presentation/d/1XI92IlQ0fF6uc5ZTCx7uwq1tFE8B9aPqilTq2oymdK8/edit?usp=sharing/), [githelper](https://docs.google.com/document/d/1HonahPqGRnmeNETOin-KjVWv3wGLw-YD3OohrlLJhDM/edit?usp=sharing/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/noljUa5qQE8/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/hukbG8vpOlU/)|
-|3|10/8|[Primer](https://docs.google.com/presentation/d/1jGXag-5T0tpCu1tgz750CYIDFj8gXgiwagye3jdZCGw/edit?usp=sharing/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/3GzRAfrhywg/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/tHyHXMy_b8c/), [Orienting Object3D](https://docs.google.com/presentation/d/1yAejxpppzY-YZBd_MMSVSR1GLv7lxFpzZaJD6fTNBlM/edit?usp=sharing)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/cQ_npkJR2f4/)|[hw1](https://docs.google.com/document/d/1rXNi2S6iTGSWHaefFxJIzFZ5j_-F2M6f7n4dGyUdlW0/edit?usp=sharing)|
+|1|09/24|[CGIntro](https://docs.google.com/presentation/d/1QN-C-BpYVnsCjk9cjG9vYHkKl5HC2SI6uFdR8yZ5fNY/edit?usp=sharing/), [JavaScript Intro](https://docs.google.com/presentation/d/1NOZ2h35-BUejaQk_UWzpN9eI_uxVFD7GvvJnVy4Qjlw/edit?usp=sharing/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/L6vZqB-O8TI/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/GbeGxo5mdS8/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/wiKf8n56huw/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/j_xwm15yiV4)||
+|2|10/01|[Vector3](https://docs.google.com/presentation/d/1MoedfrtR4hfE-vi4qmYHWLzWQaXu5WrgefV2mSVHjuk/edit?usp=sharing/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/oJmTykDux1U/),[ 3JS template](https://docs.google.com/presentation/d/1rpb7x0fBZLvmcjXXZvcdGhYxxa-I_RbljV9ofVS6gjQ/edit?usp=sharing/), [101](https://docs.google.com/presentation/d/1j0dj22vDOvJuUJ95xjHrCPERq3sLBpAEZ_5CcFpjlG0/edit?usp=sharing/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/Nu8jUuvZFac/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/hukbG8vpOlU/)|[hw0](https://docs.google.com/document/d/1ZNepPvZ9L8D3-74OixUkWyqrwVkAgYrV4oy89GV94fU/edit?usp=sharing/) [作業製作](https://docs.google.com/presentation/d/1XI92IlQ0fF6uc5ZTCx7uwq1tFE8B9aPqilTq2oymdK8/edit?usp=sharing/), [githelper](https://docs.google.com/document/d/1HonahPqGRnmeNETOin-KjVWv3wGLw-YD3OohrlLJhDM/edit?usp=sharing/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/noljUa5qQE8/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/hukbG8vpOlU/)|
+|3|10/08|[Primer](https://docs.google.com/presentation/d/1jGXag-5T0tpCu1tgz750CYIDFj8gXgiwagye3jdZCGw/edit?usp=sharing/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/3GzRAfrhywg/)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/tHyHXMy_b8c/), [Orienting Object3D](https://docs.google.com/presentation/d/1yAejxpppzY-YZBd_MMSVSR1GLv7lxFpzZaJD6fTNBlM/edit?usp=sharing)[![YOUTUBE](https://tlexpress.github.io/CGhws/index_files/yt.png)](https://youtu.be/cQ_npkJR2f4/)|[hw1](https://docs.google.com/document/d/1rXNi2S6iTGSWHaefFxJIzFZ5j_-F2M6f7n4dGyUdlW0/edit?usp=sharing)|
 |4|10/15|Drive|hw2|
 |5|10/22|Class (Eq.OfMotion, Light)|air hockey|
 |6|10/29|Mouse/Pick, Raycaster||
-|7|11/5|Geometry (Shape, Extrude, Custom, Line, \ Point Sprite, Parametric)
+|7|11/05|Geometry (Shape, Extrude, Custom, Line, \ Point Sprite, Parametric)
 |8|11/12|OBJ loader (+ webserver)||
 |9|11/19|*(midterm week, no class)*||
 |10|11/26|Z-buffer: depth test/write, \ polygon offset|z-buffer \ (depth test/write; polygon offset)|
-|11|12/3|2D Collision (circle/rectangle, circle/circle, …)|rendering, HSR|
+|11|12/03|2D Collision (circle/rectangle, circle/circle, …)|rendering, HSR|
 |12|12/10|2D technique (multiplass, HUD design, alphamap, Line, Point Sprite, …)|pipeline, rasterization|
 |13|12/17|||
 |14|12/24|||
 |15|12/31|*(元旦補假，no class)*||
-|16|1/7|||
-|17|1/14|*(last week)*||
-|18|1/21|*(final week, no class)*||
+|16|01/07|||
+|17|01/14|*(last week)*||
+|18|01/21|*(final week, no class)*||
 
 |All About|Time, [Material](https://docs.google.com/presentation/d/1bSMGRAuOhNCC2FLRGQY140-QAxN6xLg4PQ7zGvu5P-A/edit?usp=sharing), Texture, CustomGeometry, Multipass Rendering, Shadowmap|
 |-|-|
