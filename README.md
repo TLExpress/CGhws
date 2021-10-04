@@ -65,7 +65,7 @@ Advisor: [Jyun-Ming Chen](https://tchinfo.ttu.edu.tw/tchinfo.php?id=jmchen) [![G
 |7|11/05|Geometry (Shape, Extrude, Custom, Line, <br> Point Sprite, Parametric)
 |8|11/12|OBJ loader (+ webserver)||
 |9|11/19|*(midterm week, no class)*||
-|10|11/26|Z-buffer: depth test/write, <br> polygon offset|z-buffer <br> (depth test/write; polygon offset)|
+|10|11/26|Z-buffer: depth test/write, <br> polygon offset|z-buffer (depth test/write; <br> polygon offset)|
 |11|12/03|2D Collision (circle/rectangle, circle/circle, …)|rendering, HSR|
 |12|12/10|2D technique (multiplass, HUD design, alphamap, Line, Point Sprite, …)|pipeline, rasterization|
 |13|12/17|||
