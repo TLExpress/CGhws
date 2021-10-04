@@ -20,7 +20,7 @@ Status: \
 ## About course
 
 Course period: 9/24/2021 ~ 1/21/2021 \
-Advisor: [Jyun-Ming Chen](https://tchinfo.ttu.edu.tw/tchinfo.php?id=jmchen)[![Gmail](https://tlexpress.github.io/CGhws/index_files/gm.png)](mailto:jyunming.chen@gmail.com/)
+Advisor: [Jyun-Ming Chen](https://tchinfo.ttu.edu.tw/tchinfo.php?id=jmchen) [![Gmail](https://tlexpress.github.io/CGhws/index_files/gm.png)](mailto:jyunming.chen@gmail.com/)
 
 ### Syllabus
 
@@ -28,7 +28,7 @@ Advisor: [Jyun-Ming Chen](https://tchinfo.ttu.edu.tw/tchinfo.php?id=jmchen)[![Gm
 - 3JSCore
     - vector math
     - three101, primer, UsingObject3D
-    - [hierachy helper]
+    - \[hierachy helper]
     - {material}, 
     - CG concepts
     - {texture}
