@@ -1,4 +1,4 @@
-# CGI portfolio autumn 2021
+# CGI autumn 2021
 ### 田國駿
 ##### GI1.02 / 611006002
 
