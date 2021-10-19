@@ -164,6 +164,7 @@ $('#plusOne').click
 		plus_time = mag_time;
 		chrono_time += 1;
 		mag_time += 1*100;
+		ori_time = mag_time;
 		if(!plusmode)
 			plus_timer = setInterval(plus_step,1);
 		plusmode = true;
@@ -179,6 +180,7 @@ $('#plusTen').click
 		plus_time = mag_time;
 		chrono_time += 10;
 		mag_time += 10*100;
+		ori_time = mag_time;
 		if(!plusmode)
 			plus_timer = setInterval(plus_step,1);
 		plusmode = true;
@@ -194,6 +196,7 @@ $('#plusOneM').click
 		plus_time = mag_time;
 		chrono_time += 60;
 		mag_time += 60*100;
+		ori_time = mag_time;
 		if(!plusmode)
 			plus_timer = setInterval(plus_step,1);
 		plusmode = true;
@@ -209,6 +212,7 @@ $('#plusTenM').click
 		plus_time = mag_time;
 		chrono_time += 600;
 		mag_time += 600*100;
+		ori_time = mag_time;
 		if(!plusmode)
 			plus_timer = setInterval(plus_step,1);
 		plusmode = true;
@@ -224,6 +228,7 @@ $('#plusOneH').click
 		plus_time = mag_time;
 		chrono_time += 3600;
 		mag_time += 3600*100;
+		ori_time = mag_time;
 		if(!plusmode)
 			plus_timer = setInterval(plus_step,1);
 		plusmode = true;
@@ -239,6 +244,7 @@ $('#plusTenH').click
 		plus_time = mag_time;
 		chrono_time += 36000;
 		mag_time += 36000*100;
+		ori_time = mag_time;
 		if(!plusmode)
 			plus_timer = setInterval(plus_step,1);
 		plusmode = true;
