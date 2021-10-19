@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#info {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  color: #ffffff
+}
+
+body {
+  overflow: hidden;
+}
+
+.btn{
+    background:transparent;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    cursor: pointer;
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 0;
+    margin: 2px;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display:inline-block;
+    outline:none;
+    position:relative;
+    top:0;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -moz-transition: all 0.2s ease-in-out 0s;
+    -ms-transition: all 0.2s ease-in-out 0s;
+     transition: all 0.2s ease-in-out 0s;
+}
+
+.black{
+    background:#000;
+    color:#FFF;
+}
+.black:hover{
+    background:#FFF;    
+    color:#000;
+}
+.black:active, .black:focus{
+    background:#FFF;  
+    color:#888;  
+}
+
+</style>
+</head>
+
+<body>
+<div id="info">CGhws HW1
+<br>
+<a class="btn black" id='pause'>Pause</a>
+<a class="btn black" id='chrono'>Chronometric/Magnetic</a>
+<br>
+<a class="btn black" id='plusOne'>+1sec</a>
+<a class="btn black" id='plusTen'>+10sec</a>
+<br>
+<a class="btn black" id='plusOneM'>+1min</a>
+<a class="btn black" id='plusTenM'>+10min</a>
+<br>
+<a class="btn black" id='plusOneH'>+1hour</a>
+<a class="btn black" id='plusTenH'>+10hour</a>
+<br>
+Long press start/stop button to reset timer.
+<p id='state'>
+  </p>
+</div>
+<audio id="ringtone" style="display:none">
+<source src="ringtone.mp3" muted type='audio/mpeg'>
+</audio>
+<audio id="sec1" style="display:none">
+<source src="sec1.mp3" muted type='audio/mpeg'>
+</audio>
+<audio id="sec2" style="display:none">
+<source src="sec2.mp3" muted type='audio/mpeg'>
+</audio>
+</script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<script type="module">
+
+var pressTimer;
+			import * as THREE from 'https://threejs.org/build/three.module.js';
+			import {OrbitControls} from 'https://threejs.org/examples/jsm/controls/OrbitControls.js';
+			import Stats from 'https://threejs.org/examples/jsm/libs/stats.module.js';
+			import { Flow } from 'https://threejs.org/examples/jsm/modifiers/CurveModifier.js';
+			import { FontLoader } from 'https://threejs.org/examples/jsm/loaders/FontLoader.js';
+			import { TextGeometry } from 'https://threejs.org/examples/jsm/geometries/TextGeometry.js';
+
+$("#pause").mouseup(
+	function()
+	{
+		$('#pause').text('Start');
+		clearTimeout(pressTimer);
+		pause = !pause;
+		clearInterval(chrono_timer);
+		clearInterval(mag_timer);
+		if(!pause)
+		{
+			if(chrono_time!=0&&mag_time!=0)
+			{
+				ori_time = mag_time;
+				$('#pause').text('Stop');
+				chrono_timer = setInterval(chrono_step,1000);
+				mag_timer = setInterval(mag_step,10);
+			}
+		}
+		else
+			$('#pause').text('Start');
+		return false;
+	}
+).mousedown
+(
+	function()
+	{
+		pressTimer = window.setTimeout
+		(
+			function()
+			{ 
+				$('#pause').text('Reset');
+				chrono_time = 0;
+				mag_time = 0;
+				clearInterval(chrono_timer);
+				clearInterval(mag_timer);
+			},1000
+		);
+		return false; 
+	}
+);
+
+$('#chrono').click
+(
+	function() 
+	{
+		chrono = !chrono;
+		if (chrono)
+			$('#chrono').text('Chronometric');
+		else
+			$('#chrono').text('Magnetic');
+	}
+);
+
+$('#plusOne').click
+(
+	function()
+	{
+		if(mag_time<0)
+			mag_time = 0;
+		plus_time = mag_time;
+		chrono_time += 1;
+		mag_time += 1*100;
+		if(!plusmode)
+			plus_timer = setInterval(plus_step,1);
+		plusmode = true;
+	}
+);
+
+$('#plusTen').click
+(
+	function()
+	{
+		if(mag_time<0)
+			mag_time = 0;
+		plus_time = mag_time;
+		chrono_time += 10;
+		mag_time += 10*100;
+		if(!plusmode)
+			plus_timer = setInterval(plus_step,1);
+		plusmode = true;
+	}
+);
+
+$('#plusOneM').click
+(
+	function()
+	{
+		if(mag_time<0)
+			mag_time = 0;
+		plus_time = mag_time;
+		chrono_time += 60;
+		mag_time += 60*100;
+		if(!plusmode)
+			plus_timer = setInterval(plus_step,1);
+		plusmode = true;
+	}
+);
+
+$('#plusTenM').click
+(
+	function()
+	{
+		if(mag_time<0)
+			mag_time = 0;
+		plus_time = mag_time;
+		chrono_time += 600;
+		mag_time += 600*100;
+		if(!plusmode)
+			plus_timer = setInterval(plus_step,1);
+		plusmode = true;
+	}
+);
+
+$('#plusOneH').click
+(
+	function()
+	{
+		if(mag_time<0)
+			mag_time = 0;
+		plus_time = mag_time;
+		chrono_time += 3600;
+		mag_time += 3600*100;
+		if(!plusmode)
+			plus_timer = setInterval(plus_step,1);
+		plusmode = true;
+	}
+);
+
+$('#plusTenH').click
+(
+	function()
+	{
+		if(mag_time<0)
+			mag_time = 0;
+		plus_time = mag_time;
+		chrono_time += 36000;
+		mag_time += 36000*100;
+		if(!plusmode)
+			plus_timer = setInterval(plus_step,1);
+		plusmode = true;
+	}
+);
+
+var camera, scene, renderer, chrono_timer ,mag_timer, plus_timer,light;
+var pointer,mpointer,hpointer;
+var chrono_time = 0 , mag_time = 0 , plus_time = 0 , ori_time = 0;
+var chrono = true , pause = true , plusmode = false;
+
+init();
+animate();
+
+function init()
+{
+
+	var bi = document.getElementById ('ringtone');
+	var sec1 = document.getElementById ('sec1');
+	var sec2 = document.getElementById ('sec2');
+	sec1.volume = 0.2;
+	sec2.volume = 0.2;	
+	scene = new THREE.Scene();
+	  
+	renderer = new THREE.WebGLRenderer();
+	renderer.shadowMap.enabled = true;
+	renderer.shadowMap.type = THREE.PCFShadowMap;
+	renderer.setSize(window.innerWidth, window.innerHeight);
+	renderer.setClearColor(0x202020);
+	  
+	document.body.appendChild(renderer.domElement);
+
+	camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
+	camera.position.set(0,50,15);
+
+	let controls = new OrbitControls(camera, renderer.domElement);
+	
+	var ambient = new THREE.AmbientLight(0x404040);
+
+	buildClock();
+	buildPin();
+	pointer.translateY(0.45);
+	mpointer.translateY(0.3);
+	hpointer.translateY(0.15);
+	
+	scene.add(ambient);
+	light = new THREE.PointLight( 0xffffff, 1, 100 );
+	light.castShadow = true; // default false
+	light.position.set(camera.position.x*25/55,camera.position.y*25/55,camera.position.z*25/55);
+	scene.add( light );
+	
+	light.shadow.mapSize.width = 1024; // default
+	light.shadow.mapSize.height = 1024; // default
+	light.shadow.camera.near = 0.5; // default
+	light.shadow.camera.far = 500; // default
+	
+	window.addEventListener('resize', onWindowResize, false);
+	$('#pause').text('Start');
+	$('#chrono').text('Chronometric');
+	
+	controls.addEventListener( 'change', light_update );
+
+	function light_update()
+	{
+		light.position.copy( camera.position );
+	light.position.set(camera.position.x*25/55,camera.position.y*25/55,camera.position.z*25/55);
+	}
+
+	
+}
+
+function onWindowResize() {
+  
+	var width = window.innerWidth;
+  var height = window.innerHeight;
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+  renderer.setSize(width, height);
+	
+}
+
+function plus_step()
+{
+	if(plus_time+100000<mag_time)
+		plus_time += 10000;
+	else if(plus_time+10000<mag_time)
+		plus_time += 1000;
+	else if(plus_time+1000<mag_time)
+		plus_time += 100;
+	else if(plus_time<mag_time)
+		plus_time += 10;
+	else
+	{
+		plusmode = false;
+		clearInterval(plus_timer);
+		
+	}
+}
+
+function chrono_step()
+{
+	chrono_time -= 1;
+	if(chrono)
+	{
+		mag_time = chrono_time*100;
+		if(chrono_time%2)
+			sec1.play();
+		else
+			sec2.play();
+	}
+	if(chrono_time==0)
+	{
+		clearInterval(chrono_timer);
+		$('#pause').text('Start');
+		pause=true;
+		ringtone.play();
+	}
+	
+}
+
+function mag_step()
+{
+	mag_time -= 1;
+	if(mag_time==-5)
+	{
+		clearInterval(chrono_timer);
+		clearInterval(mag_timer);
+		chrono_time = 0;
+		mag_time = 0;
+		pause=true;		
+		$('#pause').text('Start');
+		ringtone.play();
+	}
+}
+
+function buildClock()
+{
+	var circle = new THREE.Mesh (new THREE.CylinderGeometry( 15.5, 15.5, 0.2, 128 ), new THREE.MeshStandardMaterial({color:'white',roughness:0.2,metalness:0,emissive:'black'}));
+	var ring = new THREE.Mesh (new THREE.TorusGeometry( 16.5, 1, 64, 128 ), new THREE.MeshStandardMaterial({color:0x808080,roughness:0.2,metalness:0.9,emissive:'black'}));
+	var center = new THREE.Mesh (new THREE.CylinderGeometry( 0.5, 0.5, 0.7, 64 ), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	ring.rotation.x = -Math.PI/2;
+	circle.translateY(-0.1);
+	ring.translateY(-0.1);
+	center.translateY(0.4);
+	ring.castShadow = true;
+	circle.receiveShadow = true;
+	center.castShadow = true;
+	var clock = new THREE.Group().add(ring,circle,center);
+	scene.add(clock);
+	drawSign();
+	drawText();
+}
+
+function drawText()
+{
+var loader = new FontLoader();
+
+loader.load( 'https://threejs.org/examples/fonts/gentilis_regular.typeface.json', function ( font ) {
+
+    var textGeo = new TextGeometry( "CITIZEN", {
+
+        font: font,
+
+        size: 0.9,
+        height: 0.1,
+
+    } );
+
+    var textMaterial = new THREE.MeshPhongMaterial( { color: 'black',shininess:100,emissive:'black' } );
+
+    var mesh = new THREE.Mesh( textGeo, textMaterial );
+	mesh.rotation.x= -Math.PI/2;
+    mesh.position.set( -2.1, 0, -7 );
+
+    scene.add( mesh );
+
+} );
+
+var loader2 = new FontLoader();
+
+loader.load( 'https://threejs.org/examples/fonts/gentilis_regular.typeface.json', function ( font ) {
+
+    var textGeo = new TextGeometry( "QUARTZ", {
+
+        font: font,
+
+        size: 0.7,
+        height: 0.1,
+
+    } );
+
+    var textMaterial = new THREE.MeshPhongMaterial( { color: 'black',shininess:100,emissive:'black' } );
+
+    var mesh = new THREE.Mesh( textGeo, textMaterial );
+	mesh.rotation.x= -Math.PI/2;
+    mesh.position.set( -1.7, 0, 8 );
+
+    scene.add( mesh );
+
+} );
+}
+
+function buildPin()
+{
+	var pin = new THREE.Mesh (new THREE.BoxGeometry (0.08,15.4,0.08), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	pin.rotation.x = -Math.PI/2;
+	pin.position.set(0,0.05,-5.5);
+	pin.castShadow = true;
+	var pbottom = new THREE.Mesh (new THREE.BoxGeometry (0.3,3.5,0.08), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	pbottom.rotation.x = -Math.PI/2;
+	pbottom.position.set(0,0.05,3);	
+	pbottom.castShadow = true;
+	pointer = new THREE.Group().add(pin,pbottom);
+	
+	var min = new THREE.Mesh (new THREE.BoxGeometry (0.4,15,0.08), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	min.rotation.x = -Math.PI/2;
+	min.position.set(0,0.05,-5);
+	min.castShadow = true;
+	mpointer = new THREE.Group().add(min);
+	mpointer.castShadow = true;
+	
+	var hin = new THREE.Mesh (new THREE.BoxGeometry (0.6,10,0.08), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	hin.rotation.x = -Math.PI/2;
+	hin.position.set(0,0.05,-4);
+	hin.castShadow = true;
+	hpointer = new THREE.Group().add(hin);
+	hpointer.castShadow = true;
+	
+	scene.add(hpointer,mpointer,pointer);
+}
+
+function animate()
+{
+	requestAnimationFrame(animate);
+	render();
+	if(plusmode)
+	{
+		pointer.rotation.y = -plus_time*(Math.PI/3000);
+		mpointer.rotation.y = -plus_time*(Math.PI/3000)/60;
+		hpointer.rotation.y = -plus_time*(Math.PI/3000)/60/12;
+	}
+	else
+	{
+		if(!chrono)
+		{
+			pointer.rotation.y = -mag_time*(Math.PI/3000);
+			mpointer.rotation.y = -mag_time*(Math.PI/3000)/60;
+			hpointer.rotation.y = -mag_time*(Math.PI/3000)/60/12;
+		}
+		else
+		{
+			var rtl = 0;
+			if((mag_time>=0?(mag_time%100>96):(-mag_time%100<3))&&ori_time-mag_time>20)
+				rtl = 0.024;
+			else 
+				rtl = 0;
+			pointer.rotation.y = -chrono_time*(Math.PI/30)+rtl;
+			mpointer.rotation.y = (-chrono_time*(Math.PI/30))/60;
+			hpointer.rotation.y = (-chrono_time*(Math.PI/30))/60/12;
+		}
+	}
+}
+
+function drawSign()
+{
+	var bwidth = 0.16;
+	var sp = 3;
+	var lp = 5;
+	var pdis = 13.5
+	var ldis = 12.5
+	var b00 = new THREE.Mesh (new THREE.BoxGeometry (bwidth-0.04,lp,0.2), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	b00.rotateX(-Math.PI/2);
+	b00.position.set(-0.125,0,-ldis);
+
+	var b01 = new THREE.Mesh (new THREE.BoxGeometry (bwidth-0.04,lp,0.2), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	b01.rotateX(-Math.PI/2);
+	b01.position.set(0.125,0,-ldis);
+
+	var b11 = new THREE.Mesh (new THREE.BoxGeometry (bwidth,sp,0.2), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	b11.rotateX(-Math.PI/2);
+	b11.rotateZ(Math.PI/6);
+	b11.position.set(Math.sin(Math.PI/6)*-pdis,0,Math.cos(Math.PI/6)*-pdis);
+
+	var b10 = new THREE.Mesh (new THREE.BoxGeometry (bwidth,sp,0.2), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	b10.rotateX(-Math.PI/2);
+	b10.rotateZ(Math.PI/3);
+	b10.position.set(Math.sin(Math.PI/3)*-pdis,0,Math.cos(Math.PI/3)*-pdis);
+
+	var b9 = new THREE.Mesh (new THREE.BoxGeometry (bwidth,lp,0.2), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	b9.rotateX(-Math.PI/2);
+	b9.rotateZ(Math.PI/2);
+	b9.position.set(-ldis,0,0);
+
+	var b8 = new THREE.Mesh (new THREE.BoxGeometry (bwidth,sp,0.2), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	b8.rotateX(-Math.PI/2);
+	b8.rotateZ(-Math.PI/3);
+	b8.position.set(Math.sin(Math.PI/3)*-pdis,0,Math.cos(Math.PI/3)*pdis);
+
+	var b8 = new THREE.Mesh (new THREE.BoxGeometry (bwidth,sp,0.2), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	b8.rotateX(-Math.PI/2);
+	b8.rotateZ(-Math.PI/3);
+	b8.position.set(Math.sin(Math.PI/3)*-pdis,0,Math.cos(Math.PI/3)*pdis);
+
+	var b7 = new THREE.Mesh (new THREE.BoxGeometry (bwidth,sp,0.2), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	b7.rotateX(-Math.PI/2);
+	b7.rotateZ(-Math.PI/6);
+	b7.position.set(Math.sin(Math.PI/6)*-pdis,0,Math.cos(Math.PI/6)*pdis);
+
+	var b6 = new THREE.Mesh (new THREE.BoxGeometry (bwidth,lp,0.2), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	b6.rotateX(-Math.PI/2);
+	b6.position.set(0,0,ldis);
+
+	var b5 = new THREE.Mesh (new THREE.BoxGeometry (bwidth,sp,0.2), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	b5.rotateX(-Math.PI/2);
+	b5.rotateZ(Math.PI/6);
+	b5.position.set(Math.sin(Math.PI/6)*pdis,0,Math.cos(Math.PI/6)*pdis);
+
+	var b4 = new THREE.Mesh (new THREE.BoxGeometry (bwidth,sp,0.2), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	b4.rotateX(-Math.PI/2);
+	b4.rotateZ(Math.PI/3);
+	b4.position.set(Math.sin(Math.PI/3)*pdis,0,Math.cos(Math.PI/3)*pdis);
+
+	var b3 = new THREE.Mesh (new THREE.BoxGeometry (bwidth,lp,0.2), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	b3.rotateX(-Math.PI/2);
+	b3.rotateZ(Math.PI/2);
+	b3.position.set(ldis,0,0);
+
+	var b2 = new THREE.Mesh (new THREE.BoxGeometry (bwidth,sp,0.2), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	b2.rotateX(-Math.PI/2);
+	b2.rotateZ(-Math.PI/3);
+	b2.position.set(Math.sin(Math.PI/3)*pdis,0,Math.cos(Math.PI/3)*-pdis);
+
+	var b1 = new THREE.Mesh (new THREE.BoxGeometry (bwidth,sp,0.2), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	b1.rotateX(-Math.PI/2);
+	b1.rotateZ(-Math.PI/6);
+	b1.position.set(Math.sin(Math.PI/6)*pdis,0,Math.cos(Math.PI/6)*-pdis);
+	
+	b00.castShadow = true;
+	b01.castShadow = true;
+	b1.castShadow = true;
+	b2.castShadow = true;
+	b3.castShadow = true;
+	b4.castShadow = true;
+	b5.castShadow = true;
+	b6.castShadow = true;
+	b7.castShadow = true;
+	b8.castShadow = true;
+	b9.castShadow = true;
+	b10.castShadow = true;
+	b11.castShadow = true;
+	
+	scene.add(b00,b01,b11,b10,b9,b8,b7,b6,b5,b4,b3,b2,b1);
+}
+
+function render() {
+
+  renderer.render(scene, camera);
+
+}
+
+
+</script>
+</body>
+
+</html>

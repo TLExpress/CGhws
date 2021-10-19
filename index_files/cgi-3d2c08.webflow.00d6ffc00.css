@@ -517,14 +517,22 @@ figcaption {
 }
 
 .works-grid {
-  display: block;
+  display: -ms-grid;
+  display: grid;
   margin-bottom: 80px;
+  -webkit-box-pack: stretch;
+  -webkit-justify-content: stretch;
+  -ms-flex-pack: stretch;
+  justify-content: stretch;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
   grid-template-areas: ". . ."
     ". . .";
-  -ms-grid-columns: 1.5fr 1fr;
-  grid-template-columns: 1.5fr 1fr;
-  -ms-grid-rows: auto auto;
-  grid-template-rows: auto auto;
+  -ms-grid-columns: 1.5fr 16px 1fr 16px 1.5fr;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
 }
 
 .carrer-headline-wrap {
@@ -571,8 +579,8 @@ figcaption {
 .work-image.cc-work-1 {
   width: auto;
   height: auto;
-  min-height: 480px;
-  max-width: 800px;
+  min-height: 640px;
+  /*max-width: 800px;*/
   margin-right: auto;
   margin-left: auto;
   -webkit-flex-wrap: nowrap;
@@ -583,7 +591,16 @@ figcaption {
 }
 
 .work-image.cc-work-2 {
-  background-image: url("https://uploads-ssl.webflow.com/6159295093bb554d1da34b16/6159295193bb55a891a34b2a_portfolio%202%20-%20wide.svg");
+  width: auto;
+  height: auto;
+  min-height: 640px;
+  /*max-width: 800px;*/
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  background-image: url("../hw1/thumb.gif");
   background-size: cover;
 }
 

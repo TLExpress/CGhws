@@ -8,7 +8,7 @@
 ## Homeworks
 
 - ![GREEN](https://tlexpress.github.io/CGhws/index_files/green.png) [HW0: Three.JS demonstration](https://tlexpress.github.io/CGhws/hw0/)
-- ![YELLOW](https://tlexpress.github.io/CGhws/index_files/yellow.png) HW1: Time-based animation
+- ![GREEN](https://tlexpress.github.io/CGhws/index_files/green.png) [HW1: Time-based animation](https://tlexpress.github.io/CGhws/hw1/)
 - ![GRAY](https://tlexpress.github.io/CGhws/index_files/gray.png) HW2: *Untitled*
 - ![GRAY](https://tlexpress.github.io/CGhws/index_files/gray.png) Air hockey
 - ![GRAY](https://tlexpress.github.io/CGhws/index_files/gray.png) z-buffer
