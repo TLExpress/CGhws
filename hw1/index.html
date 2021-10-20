@@ -474,9 +474,9 @@ function buildPin()
 	pbottom.castShadow = true;
 	pointer = new THREE.Group().add(pin,pbottom);
 	
-	var min = new THREE.Mesh (new THREE.BoxGeometry (0.4,15,0.08), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
+	var min = new THREE.Mesh (new THREE.BoxGeometry (0.4,14,0.08), new THREE.MeshStandardMaterial({color:'black',roughness:0.2,metalness:0.9,emissive:'black'}));
 	min.rotation.x = -Math.PI/2;
-	min.position.set(0,0.05,-5);
+	min.position.set(0,0.05,-6);
 	min.castShadow = true;
 	mpointer = new THREE.Group().add(min);
 	mpointer.castShadow = true;
